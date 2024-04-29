@@ -1,0 +1,41 @@
+[package]
+name = "server"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+argon2.workspace = true
+axum = { workspace = true, features = ["default", "macros", "ws"] }
+axum-extra = { workspace = true, features = ["protobuf", "typed-header"] }
+bytes.workspace = true
+chrono = { workspace = true, features = ["serde"] }
+dotenv.workspace = true
+futures-util.workspace = true
+prost.workspace = true
+tokio = { workspace = true, features = ["full"] }
+tracing.workspace = true
+tracing-subscriber.workspace = true
+thiserror.workspace = true
+serde = { workspace = true, features = ["derive"] }
+strum = { workspace = true, features = ["derive"] }
+strum_macros.workspace = true
+serde_json.workspace = true
+serde_with.workspace = true
+sqlx = { workspace = true, features = ["runtime-tokio", "postgres"] }
+tower-cookies = { workspace = true, features = [
+    "axum-core",
+    "private",
+    "signed",
+] }
+tower-http = { workspace = true, features = ["fs"] }
+lazy-regex.workspace = true
+uuid = { workspace = true, features = ["v4", "fast-rng"] }
+refinery = { workspace = true, features = ["postgres"] }
+postgres.workspace = true
+url.workspace = true
+
+[build-dependencies]
+prost-build.workspace = true
+protobuf-src.workspace = true

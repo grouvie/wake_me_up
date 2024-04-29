@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package proto.device;
+
+message DeviceProto {
+    required int32 device_id = 1;
+    required string name = 2;
+    required string mac_address = 3;
+}
+
+message DevicesProto {
+    repeated DeviceProto devices = 1;
+}

@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package proto.logout_response;
+
+message LogoutResponseProto {
+    required int32 user_id = 1;
+    required bool success = 2;
+}

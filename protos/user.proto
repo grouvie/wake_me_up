@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package proto.user;
+
+message UserProto {
+    required int64 user_id = 1;
+    required string username = 2;
+}

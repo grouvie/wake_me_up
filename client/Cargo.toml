@@ -1,0 +1,21 @@
+[package]
+name = "client"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+base64.workspace = true
+dotenv.workspace = true
+futures-util.workspace = true
+futures-channel.workspace = true
+rand.workspace = true
+reqwest = { workspace = true, features = ["cookies"] }
+prost.workspace = true
+tokio = { workspace = true, features = ["full"] }
+tokio-tungstenite.workspace = true
+wake-on-lan.workspace = true
+
+[build-dependencies]
+prost-build.workspace = true

@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+import "device.proto";
+import "basic_response.proto";
+package proto.wake_up;
+
+message WakeUpRequestProto {
+    required proto.device.DeviceProto device = 1;
+}
+
+message WakeUpResponseProto {
+    required proto.basic_response.BasicResponseProto basic_response = 1;
+}
+
+message WakeUpProto {
+    oneof wake_up_message {
+        WakeUpRequestProto wake_up_request = 1;
+        WakeUpResponseProto wake_up_response = 2;
+    }
+}

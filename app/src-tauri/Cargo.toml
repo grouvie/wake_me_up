@@ -1,0 +1,30 @@
+[package]
+name = "wake_me_up"
+version = "0.0.0"
+description = "Wake Me Up Tauri App"
+authors = ["Grouvie"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "wake_me_up_lib"
+crate-type = ["lib", "cdylib", "staticlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.0.0-beta", features = [] }
+prost-build = "0.12.4"
+
+[dependencies]
+openssl = { version = "0.10", features = ["vendored"] }
+anyhow = "1.0.82"
+async-trait = "0.1.80"
+dotenv = "0.15.0"
+prost = "0.12.4"
+tauri = { version = "2.0.0-beta", features = [] }
+tauri-plugin-shell = "2.0.0-beta"
+tauri-plugin-http = { version = "2.0.0-beta.6", features = ["cookies"] }
+thiserror = "1.0.59"
+tokio = { version = "1.37.0", features = ["rt-multi-thread", "parking_lot"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

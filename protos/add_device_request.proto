@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package proto.add_device_request;
+
+message AddDeviceRequestProto {
+    required string name = 1;
+    required string mac_address = 2;
+}
