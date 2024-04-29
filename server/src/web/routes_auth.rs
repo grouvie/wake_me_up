@@ -23,10 +23,7 @@ pub fn routes(mc: ModelController) -> Router {
 }
 
 async fn info(State(mc): State<ModelController>) -> MyResult<String> {
-    let clients = mc
-        .connected_clients
-        .lock()
-        .await;
+    let clients = mc.wake_up_sender.lock().await;
     Ok(format!("{:#?}", clients))
 }
 
