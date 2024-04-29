@@ -46,5 +46,10 @@ async fn wake_up(
         }
     };
 
+    // We get the wake_up_sender from our state and remove the already used client id
+    // from the hashmap
+    let mut wake_up_sender = mc.wake_up_sender.lock().await;
+    wake_up_sender.remove(&user_id);
+
     Ok(Protobuf(result))
 }
